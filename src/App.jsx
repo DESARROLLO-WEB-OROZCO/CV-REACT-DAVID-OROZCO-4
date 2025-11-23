@@ -1,31 +1,20 @@
 import { useState } from "react";
-import ToggleHabilidades from "./components/ToggleHabilidades";
+import { habilidadesData } from "./cvData";
 import Habilidades from "./components/Habilidades";
-import FormularioTecnologia from "./components/FormularioTecnologia";
 
-import { tecnologiasIniciales } from "./cvData"; // <-- Importa tu data
-
-function App() {
-  // 1. Estado local de tecnologías
-  const [tecnologias, setTecnologias] = useState(tecnologiasIniciales);
-
-  // 2. Función para agregar una tecnología nueva
-  const agregarTecnologia = (nueva) => {
-    setTecnologias((prev) => [...prev, nueva]);
-  };
-
-  // 3. Estado de visibilidad
-  const [mostrarHabilidades, setMostrarHabilidades] = useState(false);
+export default function App() {
+  const [mostrarHabilidades, setMostrarHabilidades] = useState(true);
 
   return (
     <div>
-      <ToggleHabilidades mostrar={mostrarHabilidades} setMostrar={setMostrarHabilidades} />
+      <button onClick={() => setMostrarHabilidades(!mostrarHabilidades)}>
+        {mostrarHabilidades ? "Ocultar Habilidades" : "Mostrar Habilidades"}
+      </button>
 
-      {mostrarHabilidades && <Habilidades tecnologias={tecnologias} />}
-
-      <FormularioTecnologia agregarTecnologia={agregarTecnologia} />
+      {mostrarHabilidades && (
+        <Habilidades habilidades={habilidadesData} />
+      )}
     </div>
   );
 }
 
-export default App;
