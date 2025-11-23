@@ -3,19 +3,19 @@ import ToggleHabilidades from "./components/ToggleHabilidades";
 import Habilidades from "./components/Habilidades";
 import FormularioTecnologia from "./components/FormularioTecnologia";
 
+import { tecnologiasIniciales } from "./cvData"; // <-- Importa tu data
+
 function App() {
-  const [mostrarHabilidades, setMostrarHabilidades] = useState(true);
+  // 1. Estado local de tecnologías
+  const [tecnologias, setTecnologias] = useState(tecnologiasIniciales);
 
-  const [tecnologias, setTecnologias] = useState([
-    "React",
-    "JavaScript",
-    "HTML",
-    "CSS"
-  ]);
-
-  const agregarTecnologia = (tec) => {
-    setTecnologias([...tecnologias, tec]);
+  // 2. Función para agregar una tecnología nueva
+  const agregarTecnologia = (nueva) => {
+    setTecnologias((prev) => [...prev, nueva]);
   };
+
+  // 3. Estado de visibilidad
+  const [mostrarHabilidades, setMostrarHabilidades] = useState(false);
 
   return (
     <div>
