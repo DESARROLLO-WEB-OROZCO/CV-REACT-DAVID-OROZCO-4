@@ -7,9 +7,12 @@ function App() {
 
   return (
     <div>
-      <ToggleHabilidades>
-        {mostrarHabilidades && <Habilidades />}
-      </ToggleHabilidades>
+      <ToggleHabilidades
+        mostrarHabilidades={mostrarHabilidades}
+        setMostrarHabilidades={setMostrarHabilidades}
+      />
+
+      {mostrarHabilidades && <Habilidades />}
     </div>
   );
 }
