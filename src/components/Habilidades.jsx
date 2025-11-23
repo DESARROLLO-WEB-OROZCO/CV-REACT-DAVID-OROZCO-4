@@ -1,17 +1,13 @@
-function Habilidades({ tecnologias }) {
+/* Habilidades.jsx */
+export default function Habilidades({ habilidades }) {
   return (
     <div>
-      <h2>Habilidades Tecnológicas</h2>
-
+      <h2>Habilidades</h2>
       <ul>
-        {tecnologias.map((tec, index) => (
-          <li key={index}>
-            {tec.nombre} – {tec.nivel}
-          </li>
+        {habilidades.map((hab, index) => (
+          <li key={index}>{hab}</li>
         ))}
       </ul>
     </div>
   );
 }
-
-export default Habilidades;
