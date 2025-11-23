@@ -8,3 +8,11 @@ export const habilidadesData = [
   "Responsabilidad",
   "Gestión del tiempo",
 ];
+
+export const tecnologiasIniciales = [
+  "JavaScript",
+  "React",
+  "HTML",
+  "CSS",
+  "Node.js",
+];
