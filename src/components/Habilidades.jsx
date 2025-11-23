@@ -1,11 +1,13 @@
 function Habilidades({ tecnologias }) {
   return (
     <div>
-      <h2>Habilidades / Tecnologías</h2>
+      <h2>Habilidades Tecnológicas</h2>
 
       <ul>
         {tecnologias.map((tec, index) => (
-          <li key={index}>{tec}</li>
+          <li key={index}>
+            {tec.nombre} – {tec.nivel}
+          </li>
         ))}
       </ul>
     </div>
